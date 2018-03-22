@@ -1,0 +1,343 @@
+/* line 1, app/client/stylesheets/abstracts/_placeholders.scss */
+.modal-page .modal-data-table .table tbody tr td span.connected, .modal-page .modal-data-table .table tbody tr td span.disconnected {
+  display: inline-block;
+  background-color: #c8c8c8;
+  width: 15px;
+  height: 15px;
+  border-radius: 15px;
+}
+
+/* line 1, app/client/stylesheets/layout/_header.scss */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  background-color: #3996da;
+  z-index: 2;
+}
+
+/* line 10, app/client/stylesheets/layout/_header.scss */
+header ul {
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+/* line 16, app/client/stylesheets/layout/_header.scss */
+header ul li {
+  position: relative;
+  display: inline-block;
+  width: 160px;
+}
+
+/* line 21, app/client/stylesheets/layout/_header.scss */
+header ul li:first-child {
+  width: 120px;
+}
+
+/* line 22, app/client/stylesheets/layout/_header.scss */
+header ul li:last-child {
+  width: 180px;
+}
+
+/* line 24, app/client/stylesheets/layout/_header.scss */
+header ul li a {
+  display: inline-block;
+  text-align: center;
+  font-size: 18px;
+  text-transform: uppercase;
+  color: white;
+  margin: 0 0px;
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+  text-decoration: none;
+  -webkit-transform-origin: center;
+      -ms-transform-origin: center;
+          transform-origin: center;
+}
+
+/* line 35, app/client/stylesheets/layout/_header.scss */
+header ul li a:hover, header ul li a.active {
+  font-size: 20px;
+  font-weight: 700;
+  color: white;
+  text-decoration: none;
+}
+
+/* line 1, app/client/stylesheets/layout/_body.scss */
+body {
+  font-family: 'Muli', sans-serif;
+  background-color: #374a5e;
+  padding-top: 100px;
+}
+
+/* line 7, app/client/stylesheets/layout/_body.scss */
+.content {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+/* line 2, app/client/stylesheets/pages/_home.scss */
+.home-page h1 {
+  color: white;
+  margin: 20vh 0;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+/* line 1, app/client/stylesheets/pages/_modal.scss */
+.modal-page {
+  height: 130vh;
+}
+
+/* line 4, app/client/stylesheets/pages/_modal.scss */
+.modal-page button.open-modal, .modal-page button.close-modal {
+  position: absolute;
+  text-transform: uppercase;
+  font-size: 16px;
+  width: 150px;
+  bottom: 20px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+}
+
+/* line 13, app/client/stylesheets/pages/_modal.scss */
+.modal-page button.close-modal {
+  position: relative;
+  bottom: auto;
+}
+
+/* line 18, app/client/stylesheets/pages/_modal.scss */
+.modal-page .modal-blocker {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 3;
+  display: none;
+  opacity: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* line 29, app/client/stylesheets/pages/_modal.scss */
+.modal-page .modal-blocker.modal-open {
+  display: block;
+  -webkit-animation: 0.5s linear forwards show-blocker;
+          animation: 0.5s linear forwards show-blocker;
+}
+
+@-webkit-keyframes show-blocker {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes show-blocker {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* line 33, app/client/stylesheets/pages/_modal.scss */
+.modal-page .modal-blocker.modal-close {
+  -webkit-animation: 0.5s linear forwards hide-blocker;
+          animation: 0.5s linear forwards hide-blocker;
+}
+
+@-webkit-keyframes hide-blocker {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes hide-blocker {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+/* line 38, app/client/stylesheets/pages/_modal.scss */
+.modal-page .modal-data-table {
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
+  position: fixed;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  display: none;
+  opacity: 0;
+  width: 70vw;
+  height: auto;
+  border-radius: 15px;
+  background-color: white;
+  z-index: 4;
+}
+
+/* line 50, app/client/stylesheets/pages/_modal.scss */
+.modal-page .modal-data-table .gutter {
+  padding: 50px 40px;
+}
+
+/* line 52, app/client/stylesheets/pages/_modal.scss */
+.modal-page .modal-data-table.modal-open {
+  display: block;
+  -webkit-animation: 0.5s linear forwards show-blocker;
+          animation: 0.5s linear forwards show-blocker;
+}
+
+@keyframes show-blocker {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* line 56, app/client/stylesheets/pages/_modal.scss */
+.modal-page .modal-data-table.modal-close {
+  -webkit-animation: 0.5s linear forwards hide-blocker;
+          animation: 0.5s linear forwards hide-blocker;
+}
+
+@keyframes hide-blocker {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+/* line 60, app/client/stylesheets/pages/_modal.scss */
+.modal-page .modal-data-table .close-button {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  color: #374a5e;
+}
+
+/* line 68, app/client/stylesheets/pages/_modal.scss */
+.modal-page .modal-data-table .search h2 {
+  font-size: 14px;
+  line-height: 14px;
+  font-weight: 700;
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
+  margin: 0;
+  text-transform: uppercase;
+  color: #073d63;
+}
+
+/* line 79, app/client/stylesheets/pages/_modal.scss */
+.modal-page .modal-data-table .form-control {
+  border-right: none;
+}
+
+/* line 81, app/client/stylesheets/pages/_modal.scss */
+.modal-page .modal-data-table .input-group-text {
+  background-color: transparent;
+  border-color: #ced4da;
+}
+
+/* line 86, app/client/stylesheets/pages/_modal.scss */
+.modal-page .modal-data-table .button-container {
+  border-top: 1px solid #dee2e6;
+  padding-top: 40px;
+  position: relative;
+  text-align: center;
+}
+
+/* line 93, app/client/stylesheets/pages/_modal.scss */
+.modal-page .modal-data-table .table {
+  margin: 0;
+}
+
+/* line 97, app/client/stylesheets/pages/_modal.scss */
+.modal-page .modal-data-table .table thead th {
+  font-size: 14px;
+  text-transform: uppercase;
+  border-top: 0;
+  color: #073d63;
+  padding: 30px 0;
+  text-align: center;
+}
+
+/* line 105, app/client/stylesheets/pages/_modal.scss */
+.modal-page .modal-data-table .table thead th:first-child {
+  text-align: left;
+  padding-left: 30px;
+}
+
+/* line 110, app/client/stylesheets/pages/_modal.scss */
+.modal-page .modal-data-table .table thead th a {
+  color: #073d63;
+}
+
+/* line 116, app/client/stylesheets/pages/_modal.scss */
+.modal-page .modal-data-table .table tbody tr td {
+  font-size: 13px;
+  text-align: center;
+  color: #073d63;
+}
+
+/* line 121, app/client/stylesheets/pages/_modal.scss */
+.modal-page .modal-data-table .table tbody tr td p {
+  margin: 0;
+  padding: 0;
+}
+
+/* line 125, app/client/stylesheets/pages/_modal.scss */
+.modal-page .modal-data-table .table tbody tr td p.address {
+  color: #969696;
+}
+
+/* line 129, app/client/stylesheets/pages/_modal.scss */
+.modal-page .modal-data-table .table tbody tr td span.connected {
+  background-color: #10c3a1;
+}
+
+/* line 134, app/client/stylesheets/pages/_modal.scss */
+.modal-page .modal-data-table .table tbody tr td span.disconnected {
+  background-color: #ce0e1f;
+}
+
+/* line 140, app/client/stylesheets/pages/_modal.scss */
+.modal-page .modal-data-table .table tbody tr td:first-child {
+  text-align: left;
+}
+
+/* line 143, app/client/stylesheets/pages/_modal.scss */
+.modal-page .modal-data-table .table tbody tr:nth-child(even) {
+  background-color: #ecf3f6;
+}

@@ -1,0 +1,65 @@
+<button type="button" class="btn btn-outline-light btn-lg open-modal" ng-click="viewData()">Open Modal</button>
+
+<div class="modal-data-table">
+	<a href="#" ng-click="closeModal()" class="close-button"><span class="oi oi-x"></span></a>
+	<div class="gutter">
+		<div class="container-fluid">
+			<div class="search row">
+				<div class="col-1">
+					<h2>Search</h2>
+				</div>
+				<div class="col-11">
+					<div class="input-group">
+						<input type="text" class="form-control" ng-model="keywords">
+						<div class="input-group-append">
+							<span class="input-group-text">
+								<span class="oi oi-magnifying-glass"></span>
+							</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<table class="table">
+			<thead>
+				<tr>
+					<th scope="col">
+						<a href="#" ng-click="orderResultsBy('name')">Name</a>
+						<span ng-class="setClass('name')"></span>
+					</th>
+					<th scope="col">
+						<a href="#" ng-click="orderResultsBy('status')">Status</a>
+						<span ng-class="setClass('status')"></span>
+					</th>
+					<th scope="col">
+						<a href="#" ng-click="orderResultsBy('peak')">Peak</a>
+						<span ng-class="setClass('peak')"></span></th>
+					<th scope="col">
+						<a href="#" ng-click="orderResultsBy('energy')">Energy</a>
+						<span ng-class="setClass('energy')"></span></th>
+					<th scope="col">
+						<a href="#" ng-click="orderResultsBy('disconnected_since')">Disconnected</a>
+						<span ng-class="setClass('disconnected_since')"></span>
+					</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="row in results | filter: search | orderBy:predicate:reverse">
+					<td>
+						<p class="name">{{ row.name }}</p>
+						<p class="address">{{ row.address }}</p>
+					</td>
+					<td><span ng-class="[ 'status', row.status ]"></span></td>
+					<td>{{ row.peak }} kW</td>
+					<td>{{ row.energy }} kWh</td>
+					<td>{{ row.disconnected_since || '--' }}</td>
+				</tr>
+			</tbody>
+		</table>
+		<div class="button-container">
+			<button type="button" class="btn btn-outline-dark btn-lg close-modal" ng-click="closeModal()">Close Modal</button>
+		</div>
+	</div>
+</div>
+
+<div class="modal-blocker" ng-click="closeModal()"></div>

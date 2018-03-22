@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang='en' ng-app="SimpTekApp">
+	<head>
+		<meta charset='utf-8'>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/open-iconic/1.1.1/font/css/open-iconic-bootstrap.min.css">
+		<link href="https://fonts.googleapis.com/css?family=Muli:400,700" rel="stylesheet">
+		<link rel='stylesheet' href='/main.css'>
+		<title>{{ pageTitle }} |  SimpTek App</title>
+		<script src="https://code.angularjs.org/1.0.0/angular-1.0.0.min.js"></script>
+		<script src="/js/app.js"></script>
+	</head>
+	<body class="{{ currentPage }}-page">
+		<header>
+			<ul>
+				<li><a href="/" ng-class="{ active : currentPage == 'home' }">Home</a></li>
+				<li><a href="#">unknown</a></li>
+				<li><a href="/modal" ng-class="{ active : currentPage == 'modal' }">modal page</a></li>
+				<li><a href="#">dead end</a></li>
+				<li><a href="#">nothing in here</a></li>
+			</ul>
+		</header>
+		<ng-view class="content"></ng-view>
+	</body>
+</html>
